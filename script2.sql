@@ -118,6 +118,41 @@ BEGIN
 END;
 $$
 
+DO
+$$
+BEGIN
+	RAISE NOTICE 'de 1 a 10, pulando de um em um';
+	FOR i IN 1..10 LOOP
+		RAISE NOTICE '%', i;
+	END LOOP;
+	
+	RAISE NOTICE 'E agora?';
+	FOR i IN 10..1 LOOP
+		RAISE NOTICE '%', i;
+	END LOOP;
+	
+	RAISE NOTICE 'De 10 a 1, pulando de um em um';
+	FOR i IN REVERSE 10..1 LOOP
+		RAISE NOTICE '%', i;
+	END LOOP;
+	
+	RAISE NOTICE 'De 1 a 50, pulando de dois em dois';
+	FOR i IN 1..50 BY 2 LOOP
+		RAISE NOTICE '%', i;
+	END LOOP;
+	
+	RAISE NOTICE 'De 1 a 5, pulando de três em três';
+	FOR i IN 1..5 BY 3 LOOP
+		RAISE NOTICE '%', i;
+	END LOOP;
+	
+	RAISE NOTICE 'De 10 a 1, pulando de 3 em 3';
+	FOR i IN REVERSE 10..1 BY 3 LOOP
+		RAISE NOTICE '%', i;
+	END LOOP;
+END;
+$$
+
 
 
 
